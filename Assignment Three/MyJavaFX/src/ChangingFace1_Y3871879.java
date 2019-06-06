@@ -35,7 +35,7 @@ public class ChangingFace1_Y3871879 extends Application {
 		 leftEye.setStroke(Color.BLUE);   
 		 
 		 // create and configure a smiling mouth (this is how it will start)    
-		 Arc mouth = new Arc(125, 150, 45, 35, 0, -180);          
+		 Arc mouth = new Arc(125, 150, 45, 35, 0,-180);          
 		 mouth.setFill(Color.YELLOW);         
 		 mouth.setStroke(Color.BLUE);         
 		 mouth.setType(ArcType.OPEN); 
@@ -76,14 +76,31 @@ public class ChangingFace1_Y3871879 extends Application {
 		 Scene scene = new Scene(root, 250, 275, Color.YELLOW);
 		 
 		 // supply the code that is executed when the smile button is pressed  
-		 smileButton.setOnAction(e -> mouth.setLength(180));
-		 smileButton.setOnAction(e -> mouth.setRadiusY(35));
+		smileButton.setOnAction (e -> 
+		 { mouth.setRadiusY(35);
+		 mouth.setLength(-180);
+		 });
+		
+		 frownButton.setOnAction(e -> 
 		 
-		thinkButton.setOnAction(e -> mouth.setRadiusY(0));
+		 {mouth.setLength(180);
+			 
+			 mouth.setRadiusY(35);
+		 });
+		 
+		 
+		
+		 thinkButton.setOnAction(e -> 
+		 
+		 {
+			 mouth.setLength(180);
+			 mouth.setRadiusY(0);
+		 });
+		
+		
 		 
 		// supply the code that is executed when the frown button is pressed   
-		 frownButton.setOnAction(e -> mouth.setLength(-180));
-		 frownButton.setOnAction(e -> mouth.setRadiusY(35));	
+		 	
 		 
 		 
 		 // add the scene to the stage, then set the title        
