@@ -31,7 +31,7 @@ public class ChangingFace1_Y3871879 extends Application {
 		 
 		 // create and configure the circle for the left eye         
 		 Circle leftEye = new Circle(162, 100, 10);         
-		 leftEye.setFill(Color.YELLOW);         
+		 leftEye.setFill(Color.RED);         
 		 leftEye.setStroke(Color.BLUE);   
 		 
 		 // create and configure a smiling mouth (this is how it will start)    
