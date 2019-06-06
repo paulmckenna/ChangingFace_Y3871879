@@ -77,14 +77,15 @@ public class ChangingFace1_Y3871879 extends Application {
 		 
 		 // supply the code that is executed when the smile button is pressed  
 		smileButton.setOnAction (e -> 
-		 { mouth.setRadiusY(35);
-		 mouth.setLength(-180);
+		 { 
+			 mouth.setRadiusY(35);
+		     mouth.setLength(-180);
 		 });
 		
 		 frownButton.setOnAction(e -> 
-		 
-		 {mouth.setLength(180);
-			 
+		
+		 {
+			 mouth.setLength(180);
 			 mouth.setRadiusY(35);
 		 });
 		 
