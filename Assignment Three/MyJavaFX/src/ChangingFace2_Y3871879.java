@@ -41,6 +41,7 @@ public class ChangingFace2_Y3871879 extends Application {
 		 mouth.setStroke(Color.BLUE);         
 		 mouth.setType(ArcType.OPEN);
 		 
+		// create and configure a thinking mouth
 		 Line line = new Line();
 		 line.setStartX(75);
 		 line.setStartY(150);
@@ -56,9 +57,6 @@ public class ChangingFace2_Y3871879 extends Application {
 		 // create a group that holds all the features           
 		 Group group1   = new Group(face, rightEye, leftEye, mouth, caption);
 		 
-		 //Group group2 = new Group(face, rightEye, leftEye, line, caption); 
-
-
 		 // create a button that will make the face smile         
 		 Button smileButton = new Button("Smile"); 
 		 
@@ -80,7 +78,7 @@ public class ChangingFace2_Y3871879 extends Application {
 		 root.setBackground(Background.EMPTY);         
 		 root.setAlignment(Pos.CENTER); 
 		 
-		 		 //add the button box and the face group to the vertical container         
+		  //add the button box and the face group to the vertical container         
 		 root.getChildren().addAll(buttonBox, group1);
 		 
 		 // create and configure a new scene         
@@ -88,57 +86,55 @@ public class ChangingFace2_Y3871879 extends Application {
 		 
 		 // supply the code that is executed when the smile button is pressed  
 		 
-		 
 		 smileButton.setOnAction (e -> 
-		
-		
-		 {
+		 	{
 			 
-				if (group1.getChildren().contains(line))
-				 {
+			if (group1.getChildren().contains(line))
+				 
+				{
 				 group1.getChildren().remove(line);
 				 group1.getChildren().add(mouth);
 				 mouth.setLength(-180);
 				 
 				 }
-				 else
+			 else
 				 mouth.setLength(-180);
 				
 				
 			 });
+		 
 		// supply the code that is executed when the frown button is pressed 
 		 frownButton.setOnAction(e -> 
 		
-		 {
+		 	{
 			 
 			if (group1.getChildren().contains(line))
-			 {
-			 group1.getChildren().remove(line);
-			 group1.getChildren().add(mouth);
-			 mouth.setLength(180);
+			   {
+				 group1.getChildren().remove(line);
+				 group1.getChildren().add(mouth);
+				 mouth.setLength(180);
 			 
-			 }
+			   }
 			 else
 			 mouth.setLength(180);
 			
 			
-		 });
+		 	});
 		 
+		// supply the code that is executed when the think button is pressed 
 		thinkButton.setOnAction(e -> 
 		 
-		{
-		if (group1.getChildren().contains(mouth))
-		 {
-		 group1.getChildren().remove(mouth);
-		 group1.getChildren().add(line);
+			{
+			
+			if (group1.getChildren().contains(mouth))
+				{
+				group1.getChildren().remove(mouth);
+				group1.getChildren().add(line);
 		 
-		 
-		 
-		 }
+		        }
 		
-		});
-		
-			 
+			});
+					 
 		 // add the scene to the stage, then set the title        
 		 stage.setScene(scene);         
 		 stage.setTitle("Changing Face");  
